@@ -1,0 +1,93 @@
+/* Styling for the hero section */
+.hero {
+
+    content: "";
+    
+        width: 100%;
+        /* Make the background wider to create the moving effect */
+        height: 100%;
+        background: url("/assets/hero2.png"), url('/assets/hero.png');
+        background-position: top right, top left;
+        background-size: auto, contain;
+        background-repeat: no-repeat, no-repeat;
+        animation: moveBackground 30s linear infinite;
+        background-color: teal;
+        height: 80vh;
+        overflow: hidden;
+        /* Adjust the animation duration as needed */
+
+.hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+                margin-top: 50px;
+        // animation: moveContent 30s linear infinite alternate;
+        /* Adjust the animation duration as needed */
+    }
+            h1{
+                color: aqua;
+                padding-top: 10px;
+            }
+}
+
+
+
+// .overlay {
+   
+//     background-color: rgba(0, 0, 1, 0.5);
+//         width: 100%;
+//         height: auto;
+//         margin: auto;
+//         margin-top: 120px;
+// }
+
+.content{
+display: flex;
+justify-content: center;
+text-align: center;
+margin-top: 200px;
+        border-radius: 5%;
+        border-style: none;
+        margin-left: auto;
+        margin-right: auto;
+        // color: aliceblue;
+   
+
+                button{
+                    height: 50px;
+                    width: 200px;
+                    border-radius: 30px;
+                    border-style: none;
+                    cursor: pointer;
+                }
+}
+
+/* Styling for the content below the hero */
+.content {
+    padding: 20px;
+}
+
+
+// @keyframes moveBackground {
+//     0% {
+//         transform: translateX(0);
+//     }
+
+//     100% {
+//         transform: translateX(-10%);
+//     }
+// }
+
+@keyframes moveContent {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 30px);
+        /* Adjust the translation value as needed */
+    }
+}
