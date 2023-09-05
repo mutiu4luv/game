@@ -39,6 +39,7 @@ section{
 
 
 .div-two{
+    width: 50%;
     img{
         height: 300px;
         width: 300px;display: flex;
@@ -47,7 +48,15 @@ section{
         margin-left: auto;
         margin-right: auto;
     }
-    
+    div{
+        text-align: center;
+        color: aqua;
+        padding-top: 20px;
+    }
+    .multiplayer{
+        font-weight: 800;
+        color: antiquewhite;
+    }
 }
 
 
@@ -64,4 +73,46 @@ section{
     }
     
 
+}
+@media screen and (max-width: 700px) {
+section{
+        width: 100%;
+   .flex{
+    display: block;
+    width: 100%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .div-one {
+       width: 100%;
+
+       h1 {
+          
+           width: 100%;
+           margin-left: auto;
+           margin-right: auto;
+       }
+       div{
+        width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+       }
+   }
+   
+
+}
+.div-two {
+    width: 100%;
+
+    // img {
+    //     height: 300px;
+    //     width: 300px;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+}
 }
