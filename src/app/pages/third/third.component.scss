@@ -1,0 +1,160 @@
+section {
+    background-color: rgb(45, 49, 49);
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .div-one {
+        width: 50%;
+
+        h1 {
+            text-align: center;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            color: rgb(211, 69, 69);
+        }
+
+        .create {
+            padding: 25px;
+            font-size: 29px;
+            color: aliceblue;
+        }
+
+        .play {
+            padding: 25px;
+            color: aqua;
+            line-height: 30px;
+        }
+
+        .join {
+            padding: 25px;
+            font-size: 29px;
+            color: aliceblue;
+        }
+    }
+
+}
+
+
+.div-two {
+    width: 50%;
+
+    img {
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div {
+        text-align: center;
+        color: aqua;
+        padding-top: 20px;
+    }
+
+    .multiplayer {
+        font-weight: 800;
+        color: antiquewhite;
+    }
+}
+
+.section-three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+background-color: rgb(45, 49, 49);
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    img {
+        height: 150px;
+        width: 150px;
+        animation: rotate 5s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    section {
+
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    section {
+        width: 100%;
+
+        .flex {
+            display: block;
+            width: 100%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .div-one {
+            width: 100%;
+
+            h1 {
+
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            div {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+
+    }
+
+    .div-two {
+        width: 100%;
+
+        // img {
+        //     height: 300px;
+        //     width: 300px;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     margin-left: auto;
+        //     margin-right: auto;
+        // }
+    }
+}

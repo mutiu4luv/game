@@ -10,6 +10,7 @@ import { HeroComponent } from './pages/hero/hero.component';
 import { TypewriterDirective } from './core/typewriter.directive';
 import { FirstComponent } from './pages/first/first.component';
 import { SecondComponent } from './pages/second/second.component';
+import { ThirdComponent } from './pages/third/third.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SecondComponent } from './pages/second/second.component';
     TypewriterDirective,
     FirstComponent,
     SecondComponent,
+    ThirdComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
