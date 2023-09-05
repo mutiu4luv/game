@@ -11,6 +11,7 @@ import { TypewriterDirective } from './core/typewriter.directive';
 import { FirstComponent } from './pages/first/first.component';
 import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
+import { FouthComponent } from './pages/fouth/fouth.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ThirdComponent } from './pages/third/third.component';
     FirstComponent,
     SecondComponent,
     ThirdComponent,
+    FouthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
