@@ -12,6 +12,8 @@ import { FirstComponent } from './pages/first/first.component';
 import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
 import { FouthComponent } from './pages/fouth/fouth.component';
+import { SponsorComponent } from './pages/sponsor/sponsor.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FouthComponent } from './pages/fouth/fouth.component';
     SecondComponent,
     ThirdComponent,
     FouthComponent,
+    SponsorComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
