@@ -90,6 +90,7 @@ margin-right: auto;
     }
 
 .section-two{
+    width: 50%;
     color: aqua;
     h1{
         text-align: center;
@@ -108,11 +109,12 @@ margin-right: auto;
     padding-bottom: 30px;
     font-size: 30px;
         line-height: 36px;
+        width: 100%;
    }
    .three{
     padding-top: 30px;
     text-align: left;
-    width: 100%;
+    max-width: 100%;
     line-height: 30px;
    }
    button{
@@ -158,6 +160,14 @@ margin-right: auto;
         align-items: center;
       
     }
-   
+    .three{
+        width: 100%;
+    }
+    .online{
+       max-width: 100%;
+    }
+   .section-two{
+    width: 100%;
+   }
 
 }
