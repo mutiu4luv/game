@@ -14,6 +14,7 @@ import { ThirdComponent } from './pages/third/third.component';
 import { FouthComponent } from './pages/fouth/fouth.component';
 import { SponsorComponent } from './pages/sponsor/sponsor.component';
 import { FooterComponent } from './component/footer/footer.component';
+// import { LoaderComponent } from './component/loader/loader.component';
 
 @NgModule({
   declarations: [
