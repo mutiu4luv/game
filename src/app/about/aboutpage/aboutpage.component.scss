@@ -1,0 +1,23 @@
+.about-us {
+    background-color: rgb(45, 49, 49);    padding: 50px 0;
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+                    color: rgb(211, 69, 69);
+                    padding-top: 25px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: aqua;
+        }
+    }
+}

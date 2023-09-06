@@ -1,0 +1,80 @@
+.background{
+    background-color: rgb(45, 49, 49);
+        color: aqua;
+        display: flex;
+        flex-wrap: wrap;
+}
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;width: 50%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    height: 30px;
+    width: 90px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    border-style: none;
+}
+.contact-us{
+    width: 50%;
+    padding: 10%;
+    color: black;
+}
+.cover{
+    background-color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 35%;margin-top: auto;
+    margin-bottom: auto;
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .background {
+
+
+        display: block;
+    }
+.cover {
+width: auto;
+height: auto;
+display: block;
+}
+
+.contact-us{margin-left: auto;
+    margin-right: auto;
+    i{
+        padding-top: 20px;
+    }
+    div{
+        padding-top: 20px;
+    }
+}
+h1{
+    padding-top:0 20px;
+}
+}
