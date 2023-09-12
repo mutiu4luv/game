@@ -12,9 +12,12 @@ import { FirstComponent } from './pages/first/first.component';
 import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
 import { FouthComponent } from './pages/fouth/fouth.component';
-import { SponsorComponent } from './pages/sponsor/sponsor.component';
+// import { SponsorComponent } from './pages/sponsor/sponsor.component';
+// import { FooterComponent } from './component/footer/footer.component';
+// import { SharedmoduleModule } from './sharedmodule/sharedmodule/sharedmodule.module';
 import { FooterComponent } from './component/footer/footer.component';
-// import { LoaderComponent } from './component/loader/loader.component';
+import { SponsorComponent } from './pages/sponsor/sponsor.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +30,13 @@ import { FooterComponent } from './component/footer/footer.component';
     SecondComponent,
     ThirdComponent,
     FouthComponent,
-    SponsorComponent,
     FooterComponent,
+    SponsorComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  // exports: [SharedmoduleModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
