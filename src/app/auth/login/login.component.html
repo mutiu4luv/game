@@ -2,16 +2,35 @@
   <div class="box">
     <h2>Login</h2>
     <!-- <form (ngSubmit)="onSubmit()"> -->
-    <form>
+    <form (submit)="loginProcess($event)" [formGroup]="formLogin">
       <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
+        <label for="Email">Email</label>
+        <input
+          type="text"
+          id="Email"
+          name="Email"
+          formControlName="Email"
+          required
+        />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
+        <label for="Password">Password</label>
+        <input
+          type="Password"
+          id="Password"
+          name="Password"
+          formControlName="Password"
+          required
+        />
       </div>
-      <button type="submit">Login</button>
+      <button
+        type="submit"
+        [disabled]="
+          formLogin.value.Email === '' || formLogin.value.Password === ''
+        "
+      >
+        Login
+      </button>
     </form>
   </div>
   <h4 routerLink="/auth/register">Sign Up Here</h4>
