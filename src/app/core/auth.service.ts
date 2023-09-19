@@ -35,4 +35,14 @@ export class AuthService {
       .post<void>(this.apiUrl + 'users/login', data, headers)
       .pipe(catchError(this.handleError));
   }
+
+  registerUser(userData: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+
+    return this.http
+      .post<any>(`${this.apiUrl}users/signup`, userData, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
 }

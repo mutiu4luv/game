@@ -1,17 +1,76 @@
 <div class="form-container">
   <h2>Register Here</h2>
-  <form>
+  <form (submit)="onRegisterUser()" [formGroup]="formRegistration">
     <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required />
+      <label for="Email">Email</label>
+      <input
+        type="Email"
+        id="Email"
+        name="Email"
+        formControlName="Email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input
+        type="Password"
+        id="Password"
+        name="Password"
+        formControlName="Password"
+        required
+      />
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <label for="First_name">First Name</label>
+      <input
+        type="text"
+        id="First_name"
+        name="First_name"
+        formControlName="First_name"
+        required
+      />
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required />
+      <label for="Last_name">Last Name</label>
+      <input
+        type="text"
+        id="Last_name"
+        name="Last_name"
+        formControlName="Last_name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="User_name">Username</label>
+      <input
+        type="text"
+        id="User_name"
+        name="User_name"
+        formControlName="User_name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phone">Phone Number</label>
+      <input
+        type="text"
+        id="Phone"
+        name="Phone"
+        formControlName="Phone"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="User_type">User Type</label>
+      <input
+        type="text"
+        id="User_type"
+        name="User_type"
+        formControlName="User_type"
+        required
+      />
     </div>
     <button type="submit">Register</button>
   </form>
