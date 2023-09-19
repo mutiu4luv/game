@@ -7,10 +7,15 @@ const routes: Routes = [
     path: '',
     component: HompageComponent,
   },
+
   {
     path: 'aboutpage',
     loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
 ];
 

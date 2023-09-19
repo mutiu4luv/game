@@ -17,7 +17,7 @@ import { FouthComponent } from './pages/fouth/fouth.component';
 // import { SharedmoduleModule } from './sharedmodule/sharedmodule/sharedmodule.module';
 import { FooterComponent } from './component/footer/footer.component';
 import { SponsorComponent } from './pages/sponsor/sponsor.component';
-import { LoginComponent } from './auth/login/login.component';
+// import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { LoginComponent } from './auth/login/login.component';
     FouthComponent,
     FooterComponent,
     SponsorComponent,
-    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   // exports: [SharedmoduleModule],
