@@ -55,6 +55,7 @@ export class RegisterComponent {
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('user_id', response.data.user_id);
           localStorage.setItem('phone', response.data.phone);
+          localStorage.setItem('phone', response.data.pho);
           localStorage.setItem('last_name', response.data.last_name);
 
           this.router.navigate(['/']);
