@@ -40,7 +40,7 @@ export class LoginComponent {
           if (result.message) {
             this.loading = result.message;
             this.token = result.token;
-            console.log('token', result.data.refresh_token);
+            // console.log('token', result.data.refresh_token);
             console.log('suceess', result.message);
             localStorage.setItem('email', result.data.email);
             localStorage.setItem('isAdmin', result.data.user_type);

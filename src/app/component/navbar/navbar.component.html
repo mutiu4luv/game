@@ -10,7 +10,13 @@
       <a href="#" class="menu-item">Home</a>
       <a href="aboutpage/about" class="menu-item">About</a>
       <a href="aboutpage/contact" class="menu-item">Contact</a>
-      <button routerLink="auth/login" class="menu-item signin">Sing In</button>
+
+      <button *ngIf="!token" routerLink="auth/login" class="menu-item signin">
+        Sing In
+      </button>
+      <button *ngIf="token" class="menu-item signin" (click)="logout()">
+        Logout
+      </button>
     </li>
   </ul>
 </nav>
