@@ -1,3 +1,4 @@
+import { TounarmentModule } from './tounarment/tounarment.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HompageComponent } from './component/hompage/hompage.component';
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'tournament',
+    loadChildren: () =>
+      import('./tounarment/tounarment.module').then((m) => m.TounarmentModule),
   },
 ];
 
