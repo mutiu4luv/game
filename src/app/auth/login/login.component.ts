@@ -45,7 +45,7 @@ export class LoginComponent {
             localStorage.setItem('email', result.data.email);
             localStorage.setItem('isAdmin', result.data.user_type);
             localStorage.setItem('user_name', result.data.user_name);
-            localStorage.setItem('token', result.data.refresh_token);
+            localStorage.setItem('token', result.data.token);
             localStorage.setItem('user_id', result.data.user_id);
             localStorage.setItem('username', result.data.user_name);
             this.router.navigate(['/']);

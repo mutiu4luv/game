@@ -1,69 +1,172 @@
-<p>
-  <!-- <mat-toolbar color="primary"> -->
-  <span>Register Your TOURNAMENT</span>
-  <span class="example-spacer"></span>
-  <!-- <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
+<div class="main">
+  <form (submit)="onFormSubmit()" [formGroup]="formTournament">
+    <div class="form-group">
+      <label for="Name">Name:</label>
+      <input
+        type="string"
+        id="Name"
+        name="Name"
+        formControlName="Name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="GameName">Name Of Tournament:</label>
+      <input
+        type="string"
+        id="GameName"
+        name="GameName"
+        formControlName="GameName"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Icon">Icon</label>
+      <input
+        type="string"
+        id="Icon"
+        name="Icon"
+        formControlName="Icon"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="TournamentType">Type Of Tournament</label>
+      <input
+        type="string"
+        id="TournamentType"
+        name="TournamentType"
+        formControlName="TournamentType"
+        required
+      />
+    </div>
+    <label for="TournamentMode">Mode Of Tournament </label>
+    <select
+      id="TournamentMode"
+      name="TournamentMode"
+      formControlName="TournamentMode"
+      type="string"
     >
-      <mat-icon>favorite</mat-icon>
-    </button> -->
-  <button mat-raised-button color="primary">ADD EMPLOYEE</button>
-  <!-- </mat-toolbar> -->
-</p>
-<div class="main-body">
-  <ng-container>
-    <div class="mat-elevation-z8">
-      <table mat-table matSort>
-        <!-- ID Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-          <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-        </ng-container>
+      <option
+        *ngFor="let TournamentMode of TournamentModes"
+        [value]="TournamentMode"
+      >
+        {{ TournamentMode }}
+      </option>
+    </select>
+    <label for="TournamentMode">Select Mode Of Tournament:</label>
+    <!-- <select
+      id="TournamentMode"
+      name="TournamentMode"
+      formControlName="TournamentMode"
+    >
+      <option
+        *ngFor="let TournamentMode of TournamentModes"
+        [value]="TournamentMode"
+      >
+        {{ TournamentMode }}
+      </option>
+    </select> -->
 
-        <ng-container matColumnDef="firstName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
-          <td mat-cell *matCellDef="let row">{{ row.firstName }}</td>
-        </ng-container>
+    <label for="Team">Select Team:</label>
+    <select id="Team" name="Team" formControlName="Team" type="string">
+      <option *ngFor="let Team of Teams" [value]="Team">
+        {{ Team }}
+      </option>
+    </select>
+    <label for="Shuffle">Select Shuffle:</label>
+    <select id="Shuffle" name="Shuffle" formControlName="Shuffle" type="string">
+      <option *ngFor="let Shuffle of Shuffles" [value]="Shuffle">
+        {{ Shuffle }}
+      </option>
+    </select>
+    <label for="Payment">Select Payment:</label>
+    <select id="Payment" name="Payment" formControlName="Payment" type="string">
+      <option *ngFor="let Payment of Payments" [value]="Payment">
+        {{ Payment }}
+      </option>
+    </select>
+    <div class="form-group">
+      <label for="TournamentSize">Size Of Tournament:</label>
+      <input
+        type="number"
+        id="TournamentSize"
+        name="TournamentSize"
+        formControlName="TournamentSize"
+        required
+      />
+    </div>
 
-        <ng-container matColumnDef="lastName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
-          <td mat-cell *matCellDef="let row">{{ row.lastName }}</td>
-        </ng-container>
+    <label for="Link">Select Link:</label>
+    <select id="Link" name="Link" formControlName="Link" type="string">
+      <option *ngFor="let Link of Links" [value]="Link">
+        {{ Link }}
+      </option>
+    </select>
 
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-          <td mat-cell *matCellDef="let row">{{ row.email }}</td>
-        </ng-container>
+    <label for="Date">Select Date:</label>
+    <!-- <p>Current Date: {{ currentDate | date : "medium" }}</p> -->
 
-        <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
-          <td mat-cell *matCellDef="let row">{{ row.gender }}</td>
-        </ng-container>
-        <ng-container matColumnDef="dob">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>DoB</th>
-          <td mat-cell *matCellDef="let row">{{ row.dob | date }}</td>
-        </ng-container>
-        <ng-container matColumnDef="education">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Education</th>
-          <td mat-cell *matCellDef="let row">{{ row.education }}</td>
-        </ng-container>
-        <ng-container matColumnDef="company">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
-          <td mat-cell *matCellDef="let row">{{ row.company }}</td>
-        </ng-container>
-        <ng-container matColumnDef="experience">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Experience</th>
-          <td mat-cell *matCellDef="let row">{{ row.experience }}</td>
-        </ng-container>
-        <ng-container matColumnDef="package">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pakage</th>
-          <td mat-cell *matCellDef="let row">
-            {{ row.package | currency : "N" }}
-          </td>
-        </ng-container>
-      </table>
-    </div></ng-container
-  >
+    <input id="Date" name="Date" formControlName="Date" type="date" />
+    <!-- <option *ngFor="let Date of Dates" [value]="Date">
+        {{ Date }}
+      </option> -->
+
+    <!-- <div class="form-group">
+      <label for="IsPaid">Select isPaid:</label>
+      <input
+        type="checkbox"
+        id="IsPaid"
+        name="IsPaid"
+        formControlName="IsPaid"
+        required
+      />
+    </div> -->
+
+    <div class="form-group">
+      <label for="RefNumbere">Ref Number:</label>
+      <input
+        type="string"
+        id="RefNumber"
+        name="RefNumber"
+        formControlName="RefNumber"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="PaymentChannel">Payment Channel:</label>
+      <input
+        type="PaymentChannel"
+        id="PaymentChannel"
+        name="PaymentChannel"
+        formControlName="PaymentChannel"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Amount">Amount:</label>
+      <input
+        type="number"
+        id="Amount"
+        name="Amount"
+        formControlName="Amount"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Amount">note:</label>
+      <input
+        type="string"
+        id="Note"
+        name="Note"
+        formControlName="Note"
+        required
+      />
+    </div>
+
+    <button>Create Tounarment</button>
+  </form>
 </div>

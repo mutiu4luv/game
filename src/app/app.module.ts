@@ -18,6 +18,8 @@ import { FouthComponent } from './pages/fouth/fouth.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SponsorComponent } from './pages/sponsor/sponsor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateTounarmentModule } from './tounarment/create-tounarment/create-tounarment.module';
 // import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
@@ -39,8 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CreateTounarmentModule,
   ],
-  // exports: [SharedmoduleModule],
+  exports: [FormsModule, ReactiveFormsModule],
 
   providers: [],
   bootstrap: [AppComponent],

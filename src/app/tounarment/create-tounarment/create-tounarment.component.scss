@@ -1,18 +1,97 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
 
-.main-body {
-    padding-top: 20px;
-    margin: 0 auto;
-    max-width: 1248px;
 
-    mat-form-field {
-        width: 100%
-    }
-}
-
-.action {
+.main{
+background-color: #333;
+padding-top: 40px;
+padding-bottom: 40px;
+color: rgb(183, 214, 9);
+}form {
     display: flex;
-    gap: 5px;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+
+label {
+        margin-bottom: 10px;
+                font-weight: bold;
+        
+    }
+
+    // select {
+    //     width: 110%;
+    //     padding: 10px;
+    //     border: 1px solid #ccc;
+    //     border-radius: 4px;
+    // }
+
+        button {
+            width: 107%;
+            height: 40px;
+            background-color: rgb(42, 18, 65);
+            color: #ccc;
+            border: none;
+        }
+                 input[type="date"] {
+                     padding: 8px;
+                     border: 1px solid #ccc;
+                     border-radius: 4px;
+                     font-size: 16px;
+                     width: 305px;
+                 }
+    
 }
+/* Add these styles to customize the input fields */
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 5px;
+
+        /* Custom input styles */
+        background-color: #fff;
+        /* Background color */
+        color: #333;
+        /* Text color */
+        font-size: 14px;
+        /* Font size */
+        /* Add more styles as needed */
+    }
+   
+}
+select {
+    width: 108%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+
+    /* Custom select styles */
+    background-color: #fff;
+    /* Background color */
+    color: #333;
+    /* Text color */
+    font-size: 14px;
+    /* Font size */
+    /* Add more styles as needed */
+    option {
+            /* Custom option styles */
+            background-color: #fff;
+            /* Background color */
+            color: #333;
+            /* Text color */
+            font-size: 14px;
+            /* Font size */
+            /* Add more styles as needed */
+        }
+}
+
+
