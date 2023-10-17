@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TournamentService } from 'src/app/core/tournament.service';
 
@@ -9,7 +9,7 @@ import { TournamentService } from 'src/app/core/tournament.service';
   templateUrl: './create-tounarment.component.html',
   styleUrls: ['./create-tounarment.component.scss'],
 })
-export class CreateTounarmentComponent {
+export class CreateTounarmentComponent implements OnInit {
   TournamentModes: string[] = ['MULTIPLAYER', 'SINGLES', 'BATTLE'];
   TournamentType: string[] = ['PUBLIC', 'PRIVATE'];
   Teams: string[] = ['DUO', 'BATTLE'];
@@ -18,14 +18,25 @@ export class CreateTounarmentComponent {
   Links: string[] = ['https://codmobile', ''];
   IsPaid!: boolean;
   loading: boolean = false;
+  Tournament: any;
+  // ID!: string;
   // currentDate: Date = new Date();
 
   formTournament: FormGroup;
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      const ID = params['ID'];
+      if (ID) {
+        this.router.navigate(['/tournament/single-tournament', ID]);
+      }
+    });
+  }
 
   constructor(
     private tournament: TournamentService,
     private router: Router,
-    private build: FormBuilder
+    private build: FormBuilder,
+    private route: ActivatedRoute
   ) {
     this.formTournament = this.build.group({
       Name: ['', [Validators.required, Validators.nullValidator]],
@@ -67,16 +78,33 @@ export class CreateTounarmentComponent {
   // }
 
   onFormSubmit() {
+    // this.ID = this.route.snapshot.params['ID'];
+    const baseUrl = '/tournament/single-tournament/';
+
     const token = localStorage.getItem('token');
     const createData = this.formTournament.value;
     console.log('new', createData);
     if (token !== null) {
       this.tournament
         .createtounarment(this.formTournament.value, token)
-        .subscribe((data) => {
+        .subscribe((data: any) => {
           console.log('data', data);
-          this.router.navigate(['/create-tournament/tournament/id']);
+          console.log(data.data.ID);
+          localStorage.setItem('TournamentId', data.tournament.TournamentId);
+
+          // this.router.navigate([
+          // '/tournament/single-tournament/' +  data.data.ID,
+          // ]);
+          this.router.navigate([`${baseUrl}${data.data.ID}`]);
         });
     }
+
+    // else
+
+    // {
+    //   alert(' details incorrect');
+    // }
+    // console.log('form registered successfully:', createData);
+    // alert('user details correct');
   }
 }

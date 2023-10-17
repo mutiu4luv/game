@@ -12,6 +12,12 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class TournamentService {
   private apiUrl = ' https://gamelyd-test.onrender.com/';
+  httpOptions: any = {
+    headers: {
+      'Content-Type': 'application/json',
+      token: localStorage.getItem('token'),
+    },
+  };
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -41,4 +47,49 @@ export class TournamentService {
   //   const url = `${this.apiUrl}tournament/save`;
   //   return this.http.post(url, data);
   // }
+
+  getTournamentById(id: any) {
+    // const url = `${this.apiUrl}tournament/tournamentID/${id}`;
+    // return this.http.get(url);
+    console.log(id, 'id');
+    return this.http
+      .get<void>(`${this.apiUrl}tournament/${id}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  //  “get all participants for a tournament”
+
+  // getAllParticipantsForAtournament(id: any) {
+  //   console.log(id, 'idp');
+  //   return this.http
+  //     .get<void>(
+  //       `${this.apiUrl}tournament/participants/${id}`,
+  //       this.httpOptions
+  //     )
+  //     .pipe(catchError(this.handleError));
+  // }
+
+  getAllParticipantsForAtournament(id: any) {
+    console.log(id, 'idp');
+
+    return this.http
+      .get<void>(
+        `${this.apiUrl}tournament/participants/${id}`,
+        this.httpOptions
+      )
+      .pipe(catchError(this.handleError));
+  }
+
+  registertounarment(id: string, data: any, token: string): Observable<void> {
+    console.log(data);
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        token: token,
+      },
+    };
+    return this.http
+      .post<void>(`${this.apiUrl}tournament/register/${id}`, data, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
 }

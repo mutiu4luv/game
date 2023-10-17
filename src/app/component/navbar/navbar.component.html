@@ -8,6 +8,27 @@
     </li>
     <li class="menu" [class.is-open]="navbarOpen">
       <a href="#" class="menu-item">Home</a>
+
+      <ul class="nav-list">
+        <li
+          class="nav-item"
+          (mouseenter)="showDropdown('services')"
+          (mouseleave)="hideDropdown('services')"
+        >
+          Services
+          <ul class="dropdown-content" *ngIf="isDropdownVisible.services">
+            <button
+              class="btnn"
+              (click)="creatTounarment()"
+              routerLink="tournament/register/:tournamentID"
+            >
+              creat Tounarment
+            </button>
+            <button class="btnn">Service 2</button>
+            <button class="btnn">Service 3</button>
+          </ul>
+        </li>
+      </ul>
       <a href="aboutpage/about" class="menu-item">About</a>
       <a href="aboutpage/contact" class="menu-item">Contact</a>
 

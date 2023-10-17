@@ -16,7 +16,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'single-tournament',
+        path: 'single-tournament/:id',
         loadChildren: () =>
           import('./single-tounarment/single-tounarment.module').then(
             (m) => m.SingleTounarmentModule

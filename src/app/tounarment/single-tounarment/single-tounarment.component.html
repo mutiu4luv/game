@@ -1,1 +1,42 @@
-<p>single-tounarment works!</p>
+<!-- <div *ngIf="singleDatas">
+  <h2>Data Details</h2>
+  <p>ID: {{ singleDatas.tournament.TournamentMode }}</p>
+</div> -->
+
+<div class="single-tournament">
+  <div class="header">
+    <h1>Tournament Details</h1>
+  </div>
+
+  <div class="content">
+    <div class="details" *ngIf="singleDatas">
+      <h1>Details</h1>
+      <h2><span>ID: </span> {{ singleDatas.tournament.ID }}</h2>
+      <h2><span>Tournament Name: </span> {{ singleDatas.tournament.Name }}</h2>
+      <h2>
+        <span> Tournament GameName:</span> {{ singleDatas.tournament.GameName }}
+      </h2>
+      <h2><span>Shuffle: </span>{{ singleDatas.tournament.Shuffle }}</h2>
+      <h2>
+        <span>Tournament Mode: </span
+        >{{ singleDatas.tournament.TournamentMode }}
+      </h2>
+      <!-- Add more details here as needed -->
+    </div>
+
+    <div class="participants">
+      <h2>Participants</h2>
+      <ul *ngIf="allParticipants?.tournament !== null">
+        <li *ngFor="let participant of allParticipants?.tournament">
+          <div *ngFor="let party of participant.players">
+            {{ party?.gameusername }}
+          </div>
+          {{ participant.tournamentname }}
+        </li>
+      </ul>
+      <ul *ngIf="allParticipants?.tournament == null">
+        <li>nothing found</li>
+      </ul>
+    </div>
+  </div>
+</div>
